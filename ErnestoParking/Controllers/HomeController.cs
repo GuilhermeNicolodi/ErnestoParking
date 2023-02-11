@@ -1,4 +1,4 @@
-﻿using ErnestoParking.Models;
+﻿using ErnestoParking.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

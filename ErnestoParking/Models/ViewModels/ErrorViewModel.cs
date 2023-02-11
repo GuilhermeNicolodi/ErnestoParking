@@ -1,4 +1,4 @@
-namespace ErnestoParking.Models
+namespace ErnestoParking.Models.ViewModels
 {
     public class ErrorViewModel
     {
