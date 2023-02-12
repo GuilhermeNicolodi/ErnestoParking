@@ -2,8 +2,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using ErnestoParking.Data;
 var builder = WebApplication.CreateBuilder(args);
+
 builder.Services.AddDbContext<ErnestoParkingContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ErnestoParkingContext") ?? throw new InvalidOperationException("Connection string 'ErnestoParkingContext' not found.")));
+    options.UseMySql(builder.Configuration.GetConnectionString("ErnestoParkingContext"), 
+    ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("ErnestoParkingContext")),
+    builder => builder.MigrationsAssembly("ErnestoParking")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
